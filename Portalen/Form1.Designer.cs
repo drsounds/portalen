@@ -35,9 +35,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(365, 52);
+            this.button1.Location = new System.Drawing.Point(730, 100);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(270, 73);
+            this.button1.Size = new System.Drawing.Size(540, 140);
             this.button1.TabIndex = 0;
             this.button1.Text = "Hantera kurser";
             this.button1.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(58, 52);
+            this.button2.Location = new System.Drawing.Point(116, 100);
+            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(273, 72);
+            this.button2.Size = new System.Drawing.Size(546, 138);
             this.button2.TabIndex = 1;
             this.button2.Text = "Hantera studenter";
             this.button2.UseVisualStyleBackColor = true;
@@ -55,23 +57,24 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(58, 162);
+            this.button3.Location = new System.Drawing.Point(116, 312);
+            this.button3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(577, 113);
+            this.button3.Size = new System.Drawing.Size(1154, 217);
             this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
+            this.button3.Text = "Visa kursregistreringar";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 511);
+            this.ClientSize = new System.Drawing.Size(1352, 983);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "s";
             this.Load += new System.EventHandler(this.Form1_Load);

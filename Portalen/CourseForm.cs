@@ -31,7 +31,7 @@ namespace Portalen
         {
             InitializeComponent();
             Course = new Course();
-            Course.Attendants = new List<Attendee>();
+            Course.Attendees = new List<Attendee>();
 
         }
         private void LoadAttendants()
@@ -39,17 +39,20 @@ namespace Portalen
             listView1.Items.Clear();
             if (this.Course != null)
             {
-                foreach(Student student in Course.Students)
+                using (SchoolContext sc = new SchoolContext())
                 {
-                    var item = listView1.Items.Add(student.LastName);
-                    item.SubItems.Add(student.FirstName);
-                    item.SubItems.Add(student.Address);
-                    item.SubItems.Add(student.Zip);
-                    item.SubItems.Add(student.City);
-                    item.SubItems.Add(student.Phone);
-                    item.SubItems.Add(student.Email);
-                    item.SubItems.Add(student.SSN);
-                    
+                    foreach (Student student in sc.Attendees.Where(a => a.CourseId == Course.Id).Select(a => a.Student).ToList())
+                    {
+                        var item = listView1.Items.Add(student.LastName);
+                        item.SubItems.Add(student.FirstName);
+                        item.SubItems.Add(student.Address);
+                        item.SubItems.Add(student.Zip);
+                        item.SubItems.Add(student.City);
+                        item.SubItems.Add(student.Phone);
+                        item.SubItems.Add(student.Email);
+                        item.SubItems.Add(student.SSN);
+
+                    }
                 }
                 listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
 
@@ -77,10 +80,7 @@ namespace Portalen
                 {
                     using (SchoolContext sc = new SchoolContext())
                     {
-                        Attendee attendee = new Attendee();
-                        attendee.Course = course;
-                        attendee.Student = student;
-                        sc.Attendees.Add(attendee);
+                        sc.EnrollStudent(student, course);
                         sc.SaveChanges();
                     }
                     

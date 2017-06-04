@@ -12,18 +12,12 @@ namespace Portalen.Models
     {
         public Course()
         {
-            this.Attendants = new List<Attendee>();
+            this.Attendees = new List<Attendee>();
         }
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Code { get; set; }
-        public ICollection<Attendee> Attendants { get; set; }
-        public IEnumerable<Student> Students {
-            get
-            {
-                return Attendants?.Select(p => p.Student);
-            }
-        }
+        public virtual ICollection<Attendee> Attendees { get; set; }
     }
 }

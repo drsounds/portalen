@@ -10,8 +10,8 @@ namespace Portalen.Models
     {
         public Student()
         {
-            Attendants = new List<Attendee>();
+            Attendees = new List<Attendee>();
         }
-        public virtual ICollection<Attendee> Attendants { get; set; }
+        public virtual ICollection<Attendee> Attendees { get; set; }
     }
 }

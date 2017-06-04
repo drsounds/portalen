@@ -30,7 +30,7 @@ namespace Portalen
             string ssn = tbSSN.Text;
             listView1.Items.Clear();
             using (SchoolContext sc = new SchoolContext()) {
-                IList<Student> students = sc.Students.Where(p => p.FirstName == firstName || p.LastName == lastName || p.SSN == ssn).ToList();
+                IList<Student> students = sc.Students.Where(p => p.FirstName.Contains(firstName) || p.LastName.Contains(lastName) || p.SSN.Contains(ssn)).ToList();
                 foreach(Student student in students)
                 {
                     var item = listView1.Items.Add(student.SSN);

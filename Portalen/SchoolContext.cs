@@ -23,6 +23,7 @@ namespace Portalen
             attendee.CourseId = course.Id;
             attendee.StudentId = student.Id;
             this.Attendees.Add(attendee);
+            this.SaveChanges();
         }
 
     }

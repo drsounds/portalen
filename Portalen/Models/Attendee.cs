@@ -11,12 +11,10 @@ namespace Portalen.Models
     public class Attendee
     {
         [Key, Column(Order = 0)]
-        [Index(IsUnique = true)]
         public int StudentId { get; set; }
         [ForeignKey("StudentId")]
         public virtual Student Student { get; set; }
         [Key, Column(Order = 1)]
-        [Index(IsUnique = true)]
         public int CourseId { get; set; }
         [ForeignKey("CourseId")]
         public virtual Course Course { get; set; }
